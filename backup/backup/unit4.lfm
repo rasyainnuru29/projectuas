@@ -1,0 +1,48 @@
+object Form4: TForm4
+  Left = 826
+  Height = 241
+  Top = 317
+  Width = 510
+  Caption = 'Master Data Detail'
+  ClientHeight = 241
+  ClientWidth = 510
+  DefaultMonitor = dmDesktop
+  LCLVersion = '2.2.6.0'
+  object Label1: TLabel
+    Left = 152
+    Height = 30
+    Top = 16
+    Width = 184
+    Caption = 'Master/Detail Data'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -21
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object DBGrid1: TDBGrid
+    Left = 224
+    Height = 100
+    Top = 64
+    Width = 240
+    Color = clWindow
+    Columns = <>
+    TabOrder = 0
+  end
+  object DBGrid2: TDBGrid
+    Left = 24
+    Height = 100
+    Top = 64
+    Width = 192
+    Color = clWindow
+    Columns = <>
+    TabOrder = 1
+  end
+  object ZQuery1: TZQuery
+    Params = <>
+    Left = 48
+    Top = 112
+  end
+end

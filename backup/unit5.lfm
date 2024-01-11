@@ -1,0 +1,150 @@
+object Form5: TForm5
+  Left = 743
+  Height = 339
+  Top = 122
+  Width = 522
+  Caption = 'Transaksi'
+  ClientHeight = 339
+  ClientWidth = 522
+  LCLVersion = '2.2.6.0'
+  object Label1: TLabel
+    Left = 64
+    Height = 30
+    Top = 8
+    Width = 191
+    Caption = 'Transaksi Penjualan'
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -21
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object DBNavigator1: TDBNavigator
+    Left = 32
+    Height = 25
+    Top = 48
+    Width = 241
+    BevelOuter = bvNone
+    ChildSizing.EnlargeHorizontal = crsScaleChilds
+    ChildSizing.EnlargeVertical = crsScaleChilds
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 100
+    ClientHeight = 25
+    ClientWidth = 241
+    Options = []
+    TabOrder = 0
+  end
+  object DBGrid1: TDBGrid
+    Left = 32
+    Height = 100
+    Top = 88
+    Width = 272
+    Color = clWindow
+    Columns = <>
+    DataSource = DataSource1
+    TabOrder = 1
+  end
+  object DBGrid2: TDBGrid
+    Left = 32
+    Height = 100
+    Top = 208
+    Width = 272
+    Color = clWindow
+    Columns = <>
+    DataSource = DataSource2
+    TabOrder = 2
+  end
+  object Button1: TButton
+    Left = 336
+    Height = 25
+    Top = 48
+    Width = 75
+    Caption = 'laporan'
+    OnClick = Button1Click
+    TabOrder = 3
+  end
+  object DataSource1: TDataSource
+    DataSet = ZQuery1
+    Left = 152
+    Top = 136
+  end
+  object ZConnection1: TZConnection
+    ControlsCodePage = cCP_UTF8
+    AutoEncodeStrings = True
+    Properties.Strings = (
+      'AutoEncodeStrings=ON'
+      'controls_cp=CP_UTF8'
+    )
+    Connected = True
+    DesignConnection = True
+    AfterConnect = ZConnection1AfterConnect
+    HostName = 'localhost'
+    Port = 3306
+    Database = 'barang_aplikasi'
+    User = 'root'
+    Protocol = 'mysql-5'
+    LibraryLocation = 'C:\Users\lenovo\Documents\uas pak agung baru\mysql-5.7.44-winx64\lib\libmysql.dll'
+    Left = 80
+    Top = 136
+  end
+  object ZQuery1: TZQuery
+    Connection = ZConnection1
+    Active = True
+    SQL.Strings = (
+      'SELECT*FROM transaksi'
+    )
+    Params = <>
+    Left = 224
+    Top = 136
+  end
+  object DataSource2: TDataSource
+    DataSet = ZQuery2
+    Left = 152
+    Top = 256
+  end
+  object ZConnection2: TZConnection
+    ControlsCodePage = cCP_UTF8
+    AutoEncodeStrings = True
+    Properties.Strings = (
+      'AutoEncodeStrings=ON'
+      'controls_cp=CP_UTF8'
+    )
+    Connected = True
+    DesignConnection = True
+    HostName = 'localhost'
+    Port = 3306
+    Database = 'barang_aplikasi'
+    User = 'root'
+    Protocol = 'mysql-5'
+    LibraryLocation = 'C:\Users\lenovo\Documents\uas pak agung baru\mysql-5.7.44-winx64\lib\libmysql.dll'
+    Left = 80
+    Top = 256
+  end
+  object ZQuery2: TZQuery
+    Connection = ZConnection2
+    Active = True
+    SQL.Strings = (
+      'select*from data_barang'
+    )
+    Params = <>
+    Left = 232
+    Top = 256
+  end
+  object frReport1: TfrReport
+    InitialZoom = pzDefault
+    Options = []
+    PreviewButtons = [pbZoom, pbLoad, pbSave, pbPrint, pbFind, pbHelp, pbExit]
+    DataType = dtDataSet
+    Left = 340
+    Top = 97
+  end
+  object frDBDataSet1: TfrDBDataSet
+    DataSet = ZQuery1
+    Left = 359
+    Top = 164
+  end
+end
